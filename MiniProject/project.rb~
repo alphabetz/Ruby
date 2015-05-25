@@ -25,7 +25,7 @@ def main
     
 	if choice == 1
 			r.message(choice)
-			r.story(choice)
+			#r.story(choice)
 			r.fight
 	elsif choice == 2
 			r.message(choice)
