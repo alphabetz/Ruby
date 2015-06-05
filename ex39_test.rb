@@ -39,7 +39,7 @@ Dict.list(states)
 
 # puts every cities in state
 puts '-' * 10
-Dict.list(cites)
+Dict.list(cities)
 
 puts '-' * 10
 # by default ruby says "nil" when something isn't in there
