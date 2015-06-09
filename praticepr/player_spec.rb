@@ -1,0 +1,49 @@
+require_relative 'player'
+
+describe Player do
+  before do
+    @initial_health = 150
+    @player = Player.new( "larry", @initial_health)
+    $stdout = StringIO.new
+  end
+
+
+  it "has a capitilized name" do
+    expect(@player.name).to eq("Larry")
+  end
+  
+  it "has a initial health of 150" do
+    expect(@initial_health).to eq(150)
+  end
+  
+  it "has string representation" do
+    expect(@player.to_s).to eq("I'm Larry with a health of #{@initial_health} and score of 155")
+  end
+  
+  it "score should be a sum of health and length" do
+    expect(@player.score).to eq( 155 )
+  end
+  
+  it "Woot should increases health by 15" do
+    @player.woot
+    expect(@player.health).to eq( @initial_health + 15 )
+  end
+  
+  it "Blam should decreases health by 10" do
+    @player.blam
+    expect(@player.health).to eq( @initial_health - 10 )
+  end
+  
+  context "Create with default health" do
+  
+    before do
+      @player = Player.new( "Larry" )
+    end
+    
+    it "has health of 100" do
+      expect( @player.health ).to eq( 100 )
+    end
+     
+  end
+  
+end
