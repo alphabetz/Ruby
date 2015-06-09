@@ -1,0 +1,4 @@
+#puts is private method belong to self
+
+puts self
+puts self.class
