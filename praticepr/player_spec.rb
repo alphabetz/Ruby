@@ -25,7 +25,7 @@ describe Player do
   end
   
   it "Woot should increases health by 15" do
-    @player.woot
+    @player.w00t
     expect(@player.health).to eq( @initial_health + 15 )
   end
   
@@ -44,6 +44,30 @@ describe Player do
       expect( @player.health ).to eq( 100 )
     end
      
+  end
+  
+  context "With default health greater than 100" do
+    
+    before do
+      @player = Player.new( "Larry", 150 )
+    end
+    
+    it "is stong?" do
+      expect( @player ).to be_strong
+    end
+    
+  end
+  
+  context "with start health less or equal than 100" do
+  
+    before do
+      @player = Player.new( "Moe", 100 )
+    end
+    
+    it "is wimpy?" do
+      expect( @player ).to_not be_strong
+    end
+    
   end
   
 end

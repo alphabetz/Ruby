@@ -3,7 +3,7 @@ class Player
   attr_accessor :name
   attr_reader :health
  
-  def initialize(name,health=100)
+  def initialize(name, health=100)
     @name = name.capitalize
     @health = health
   end
@@ -17,13 +17,17 @@ class Player
     puts "#{@name} got blammed!"
   end
   
-  def woot
+  def w00t
     @health += 15
     puts "#{@name} got w00ted!"
   end
   
   def score
-    @health + name.length
+    @health + @name.length
+  end
+  
+  def strong?
+    @health > 100
   end
   
 end
