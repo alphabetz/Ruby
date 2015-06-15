@@ -1,0 +1,22 @@
+1. loop round
+2. loop strong and wimpy
+3. sort player by score
+
+upto = upto(10) mean ten times
+
+print_stats
+strong and wimpy use partition method
+strong, wimpy = @players.partition { |player| player,strong?}
+
+puts "\n Strong"
+puts strong
+puts "\n Wimpy"
+puts wimpy
+and add to studiio.rb => .print_stats
+
+sort_player
+
+override <=> method
+def <=>(other_move)
+  other_movie.rank <=> @players
+end

@@ -24,7 +24,7 @@ class Player
   end
   
   def score
-    @health + points
+    @health + @name.length
   end
   
   def points

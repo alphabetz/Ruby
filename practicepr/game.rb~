@@ -1,6 +1,6 @@
 require_relative 'player'
 require_relative 'game_turn'
-require_relative 'treasure_trove'
+require_relative 'treasure_trove.rb'
 
 class Game
 

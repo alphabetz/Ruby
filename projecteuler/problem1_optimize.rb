@@ -1,7 +1,7 @@
-#Optimize solution pof problem no.1
+#Optimize solution of problem no.1
 
 def sumdivideby(n)
-  target = 999999
+  target = 999
   p = target / n
   return n * p * (p + 1) / 2
 end

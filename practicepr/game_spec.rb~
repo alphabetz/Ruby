@@ -47,7 +47,7 @@ describe Game do
     game.add_player(player)
     game.play(1)
     
-    expect(player.points).to_not be_zero
+    expect(player.points).to_not eq(0)
   end
   
   it "computes total points as the sum of all player points" do
