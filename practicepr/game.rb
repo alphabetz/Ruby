@@ -38,6 +38,11 @@ class Game
     puts "#{player.name} has #{player.health}"
   end
   
+  def high_score_entry(player)
+    formatted_name = player.name.ljust(20, '.')
+    puts "#{formatted_name} #{player.score}"
+  end
+  
   def total_points
     @players.reduce(0) { |sum, player| sum + player.points }
   end
@@ -60,13 +65,29 @@ class Game
     puts "\n#{total_points} total points from treasures found"
     @players.each do |player|
       puts "\n#{player.name}'s point totals:"
+      player.each_found_treasure do |treasure|
+        puts "#{treasure.points} total #{treasure.name} points"
+      end
       puts "#{player.points} grand total points"
     end
     
     puts "\n#{@title} High Scores:"
     @players.sort.each do |player|
-      formatted_name = player.name.ljust(20, '.')
-      puts "#{formatted_name} #{player.score}"
+      puts high_score_entry(player)
+    end
+  end
+  
+  def load_players(from_file)
+    File.readlines(from_file).each do |line|
+      add_player(Player.from_csv(line))
+    end
+  end
+  
+  def save_high_scores(to_file = "high_scores.txt")
+    File.open(to_file, "w") do |file|
+      @player.sort.each do |player|
+        file.puts high_score_entry(player)
+      end
     end
   end
  
