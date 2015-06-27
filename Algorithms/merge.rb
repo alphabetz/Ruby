@@ -35,24 +35,7 @@ def merge(a, b)
   return answer
 end
 
-#The Ruby's way
-def merge_ruby(a, b)
-  answer = []
-  i, j, k = 0, 0, 0
-  
-  until i > a.length || j > b.length do
-    answer[k] = a[i] if a[i] < b[j]
-    answer[k] = b[j] unless a[i] < b[j]
-  end
-
-
-
-
-
-
-
-
-end
+#The Ruby's way can't figure it out yet!
 
 a = [1, 3, 5, 7, 9]
 b = [2, 4, 6, 8]

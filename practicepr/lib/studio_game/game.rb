@@ -7,7 +7,7 @@ module StudioGame
   class Game
 
     attr_accessor :title
-   
+ 
     def initialize( title )
       @title = title
       @players = []
