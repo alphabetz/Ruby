@@ -1,26 +1,21 @@
 #ให้เขียน method ชื่อ insertionSort รับ array ของตัวเลขเข้ามาแล้วเรียงข้อมูลด้วยวิธี insertion sort
 
-def insertion_sort(array)
-  i = 0
-  j = 1
-  temp = []
-  
-  for i in array
-    for j in array
-      if array[i] > array[j]
-        temp[0] = array[j]
-        puts temp[0]
-        array[j] = array[i]
-        puts array[j]
+def insertion_sort(list)
+
+  (1..list.length - 1).each do |index|
+    value = list[index]
+    i = index - 1
+    until i < 0 do 
+      if value < list[i]
+        list[i+1], list[i] = list[i], value
+        i = i - 1
+      else
+        break
       end
-      j += 1
     end
-    i += 1
-    
-    #puts array
   end
-    
 end
 
-array = [4, 2]
-insertion_sort(array)
+list = [2, 1, 3, 2]
+insertion_sort(list)
+print list
