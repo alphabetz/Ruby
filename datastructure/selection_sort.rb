@@ -1,21 +1,20 @@
 #Selection sort
 
-def selection_sort(array)
-  print array
-  print "\n"
-  0.upto(array.size - 2).each do |j|
-    min_index = j
-    (j + 1).upto(array.size - 1).each do |i|
-      min_index = i if array[i] < array[min_index]
+def selection_sort(list)
+  puts "initial list: #{list}"
+  
+  (0..list.length - 1).each do |i|
+    min_index = i
+    (i+1..list.length - 1).each do |j|
+      if list[j] < list[min_index]
+        min_index = j
+      end
     end
-    array[j], array[min_index] = array[min_index], array[j]
-    puts "After round"
-    print array
-    print "\n"
+    list[i], list[min_index] = list[min_index], list[i]
   end
-  return array
+  puts "sorted list: #{list}"
 end
 
-array = [22, 11, 99, 88, 9, 7, 42]
+list = (1..100).to_a.shuffle
 
-print selection_sort(array)
+selection_sort(list)

@@ -1,7 +1,6 @@
-#ให้เขียน method ชื่อ insertionSort รับ array ของตัวเลขเข้ามาแล้วเรียงข้อมูลด้วยวิธี insertion sort
-
 def insertion_sort(list)
-
+  beginning_time = Time.now
+  
   (1..list.length - 1).each do |index|
     value = list[index]
     i = index - 1
@@ -10,8 +9,8 @@ def insertion_sort(list)
         i = i - 1
     end
   end
+     
+  end_time = Time.now
+  puts "Time elapsed #{(end_time - beginning_time)}"
 end
 
-list = [2, 1, 3, 2]
-insertion_sort(list)
-print list
